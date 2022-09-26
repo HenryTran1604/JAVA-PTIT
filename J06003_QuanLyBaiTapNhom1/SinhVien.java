@@ -3,13 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package J05074_DiemDanh1;
+package J06003_QuanLyBaiTapNhom1;
 
 /**
  *
- * @author admin
+ * @author :Tran Quang Huy <HenryTran at github.com/Henrytran1604>
  */
-//class
-public class J05074 {
+public class SinhVien {
     
 }
