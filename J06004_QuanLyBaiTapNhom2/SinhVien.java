@@ -3,25 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package J06003_QuanLyBaiTapNhom1;
+package J06004_QuanLyBaiTapNhom2;
 
 /**
  *
  * @author :Tran Quang Huy
  */
 public class SinhVien {
-    private String maSinhVien, hoTen, sdt;
+    private String maSv, hoTen, sdt;
     private int stt;
 
-    public SinhVien(String maSinhVien, String hoTen, String sdt, int stt) {
-        this.maSinhVien = maSinhVien;
+    public SinhVien(String maSv, String hoTen, String sdt, int stt) {
+        this.maSv = maSv;
         this.hoTen = hoTen;
         this.sdt = sdt;
         this.stt = stt;
     }
 
-    public String getMaSinhVien() {
-        return maSinhVien;
+    public String getMaSv() {
+        return maSv;
     }
 
     public String getHoTen() {
@@ -35,10 +35,8 @@ public class SinhVien {
     public int getStt() {
         return stt;
     }
-
     @Override
-    public String toString() {
-        return this.maSinhVien + " " + this.hoTen + " " + this.sdt;
+    public String toString(){
+        return this.maSv + " " + this.hoTen + " " + this.sdt + " " + this.stt;
     }
-    
 }

@@ -9,7 +9,6 @@ import java.io.DataInputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.TreeMap;
 
 /**
  *
@@ -19,11 +18,17 @@ public class J07005 {
     public static void main(String[] args) throws FileNotFoundException, IOException{
         FileInputStream inputStream = new FileInputStream("DATA.in");
         DataInputStream dataInputStr = new DataInputStream(inputStream);
-        TreeMap <Integer, Integer> map = new TreeMap<>();
+        int[] f = new int[1001];
         int n = 0;
-        while(dataInputStr.available() > 0){
+        for(int i = 0; i < 100000; i++){
             n = dataInputStr.readInt();
-            System.out.println(n);
+            f[n] += 1;
         }
+        for(int i = 0; i < 1000; i++){
+            if(f[i] != 0){
+                System.out.println(i + " " + f[i]);
+            }
+        }
+        dataInputStr.close();
     }
 }
