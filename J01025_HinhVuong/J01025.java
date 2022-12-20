@@ -22,5 +22,11 @@ public class J01025 {
         for(int i = 0; i < 4; i++){
             p2[i] = sc.nextInt();
         }
+        int x1 = Math.min(p1[0], p2[0]);
+        int x2 = Math.min(p1[1], p2[1]);
+        int y1 = Math.max(p1[2], p2[2]);
+        int y2 = Math.max(p1[3], p2[3]);
+        int x = Math.max(y1-x1, y2-x2);
+        System.out.println(x*x);
     }
 }

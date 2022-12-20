@@ -15,12 +15,14 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.Map;
+import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Scanner;
 import java.util.Stack;
@@ -31,11 +33,33 @@ import java.util.Stack;
  */
 
 public class Main {
-    
     public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException, ParseException {
-        Date d = new SimpleDateFormat("dd/MM/yyyy").parse("16/9/1999");
-        LocalDate ld = LocalDate.from(d.toInstant().atZone(ZoneId.systemDefault())).plusDays(100);
-        Date n = Date.from(ld.atStartOfDay(ZoneId.systemDefault()).toInstant());
-        System.out.println(n);
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        Stack <Character> st = new Stack<>();
+        for(int i = 0; i < s.length(); i++){
+            if(st.empty()) st.push(s.charAt(i));
+            else{
+                char c = st.peek();
+                if(c == s.charAt(i)){
+                    st.pop();
+                }
+                else{
+                    st.push(s.charAt(i));
+                }
+            }
+        }
+        if(st.size() == 0){
+            System.out.println("Empty String");
+        }
+        else{
+            StringBuilder sb = new StringBuilder();
+            while (!st.empty()) {
+                sb.append(st.pop());
+            }
+            System.out.println(sb.reverse());
+        }
+        
+        
     }
 }
