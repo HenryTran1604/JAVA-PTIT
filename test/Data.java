@@ -5,45 +5,31 @@
  */
 package test;
 
-import java.io.Serializable;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.Stack;
 
 /**
  *
- * @author :Tran Quang Huy
+ * @author admin
  */
-public class Data implements Serializable, Comparable<Data>{
-    private int first, second;
-
-    public Data(int first, int second) {
-        this.first = first;
-        this.second = second;
-    }
-
-    public int getFirst() {
-        return first;
-    }
-
-    public int getSecond() {
-        return second;
-    }
+public class Data {
     
-    @Override
-    public int compareTo(Data o) {
-        return this.first - o.first;
+    public static void main(String[] args) throws FileNotFoundException, IOException {
+        FileOutputStream fos = new FileOutputStream("DATA2.in");
+        ObjectOutputStream oos = new ObjectOutputStream(fos);
+        ArrayList <Integer> list = new ArrayList<>();
+        list.add(2);
+        list.add(2);
+        list.add(4);
+        list.add(19);
+        list.add(107);
+        oos.writeObject(list);
+        oos.close();
+        fos.close();
     }
-    public String toString(){
-        return "(" + first + ", " + second + ")";
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if(this == obj) return true;
-        if(obj == null) return false;
-        if(obj instanceof Data){
-            Data dat = (Data) obj;
-            return this.first == dat.first && this.second == dat.second;
-        }
-        return false;
-    }
-    
 }
